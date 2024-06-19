@@ -45,14 +45,14 @@ if show_first_rows:
 
 # Periksa duplikasi jika dicentang
 if show_duplicates:
-    num_duplicates = bike_df.duplicated().sum()
+    num_duplicates = df_bike.duplicated().sum()
     st.subheader("Periksa Duplikasi")
     st.write(f"Jumlah Duplikasi: {num_duplicates}")
 
 # Tampilkan ringkasan statistik DataFrame jika dicentang
 if show_statistics:
     st.subheader("Ringkasan Statistik DataFrame")
-    st.write(bike_df.describe())
+    st.write(df_bike.describe())
 
 # Visualisasi data jika dicentang
 if show_visualizations:
