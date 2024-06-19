@@ -57,7 +57,7 @@ if show_statistics:
 # Visualisasi data jika dicentang
 if show_visualizations:
     # Membuat plot pie untuk persentase penyewaan sepeda pada hari libur
-    avg_holiday = bike_df.groupby('holiday_day')['cnt_day'].mean().reset_index()
+    avg_holiday = df_bike.groupby('holiday_day')['cnt_day'].mean().reset_index()
     fig1, ax1 = plt.subplots()
     ax1.pie(avg_holiday['cnt_day'], labels=['Tidak Libur', 'Libur'], autopct='%1.1f%%', colors=['lightblue', 'lightgreen'])
     ax1.set_title('Persentase Rata-rata Penyewaan Sepeda pada Hari Libur')
