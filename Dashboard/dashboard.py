@@ -41,7 +41,7 @@ if show_summary:
 # Tampilkan lima baris pertama DataFrame jika dicentang
 if show_first_rows:
     st.subheader("Lima Baris Pertama DataFrame")
-    st.write(bike_df.head())
+    st.write(df_bike.head())
 
 # Periksa duplikasi jika dicentang
 if show_duplicates:
