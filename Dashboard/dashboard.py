@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 # Memuat data dari URL CSV
 url = "https://raw.githubusercontent.com/mahdirz117/Proyek-Analisis-Data---Belajar-Analisis-Data-dengan-Python/main/Bike-sharing-dataset/day.csv"
-df_bike = pd.read_csv(url)
+bike_df = pd.read_csv(url)
 
 # Judul aplikasi
 st.title("Analisis Dataset Bike Sharing")
@@ -41,23 +41,23 @@ if show_summary:
 # Tampilkan lima baris pertama DataFrame jika dicentang
 if show_first_rows:
     st.subheader("Lima Baris Pertama DataFrame")
-    st.write(df_bike.head())
+    st.write(bike_df.head())
 
 # Periksa duplikasi jika dicentang
 if show_duplicates:
-    num_duplicates = df_bike.duplicated().sum()
+    num_duplicates = bike_df.duplicated().sum()
     st.subheader("Periksa Duplikasi")
     st.write(f"Jumlah Duplikasi: {num_duplicates}")
 
 # Tampilkan ringkasan statistik DataFrame jika dicentang
 if show_statistics:
     st.subheader("Ringkasan Statistik DataFrame")
-    st.write(df_bike.describe())
+    st.write(bike_df.describe())
 
 # Visualisasi data jika dicentang
 if show_visualizations:
     # Membuat plot pie untuk persentase penyewaan sepeda pada hari libur
-    avg_holiday = df_bike.groupby('holiday_day')['cnt_day'].mean().reset_index()
+    avg_holiday = bike_df.groupby('holiday_day')['cnt_day'].mean().reset_index()
     fig1, ax1 = plt.subplots()
     ax1.pie(avg_holiday['cnt_day'], labels=['Tidak Libur', 'Libur'], autopct='%1.1f%%', colors=['lightblue', 'lightgreen'])
     ax1.set_title('Persentase Rata-rata Penyewaan Sepeda pada Hari Libur')
